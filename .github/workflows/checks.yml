@@ -1,0 +1,28 @@
+name: Numerical checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      full_analysis:
+        description: Recompute the full numerical analysis against archived tables
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  numerical-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python examples/verify_bangna.py
+      - name: Full numerical reproduction
+        if: github.event_name == 'workflow_dispatch' && inputs.full_analysis
+        run: python run_analysis.py --output outputs/full-analysis
