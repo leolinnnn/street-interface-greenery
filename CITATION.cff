@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Cite this repository when using its code or assets; see the README for the associated research record."
+type: software
+title: "Street-interface greenery: research code and numerical reproduction"
+authors:
+  - family-names: Lin
+    given-names: Zihao
+repository-code: "https://github.com/leolinnnn/street-interface-greenery"

@@ -6,26 +6,7 @@ Original research functions for interface aggregation, robust regression,
 sensitivity analysis, street-view measurement and spatial variables. A portable
 runner connects the numerical workflow to a small extract of the study tables.
 
-## Run
-
-From the repository root, using Python 3.12:
-
-```sh
-python -m pip install -r requirements.txt
-python run_analysis.py --output outputs/bangna
-```
-
-The runner starts with **289 street-view points**, including **267 valid interface
-observations**, aggregates them to **25 residential areas**, and fits:
-
-- M2 and M2-I, using sample-SD standardisation and HC3 covariance.
-- Seven area-level sensitivity specifications: median IO; exclusion of low-confidence,
-  boundary or intersection points; and each of the three IO components separately.
-- The auxiliary point-level model with area-clustered CR1 covariance.
-
-It also produces type comparisons, Dunn tests with Benjamini–Hochberg adjustment,
-Spearman associations, VIFs and influence diagnostics. CSVs and `verification.json`
-are written to the requested new directory. Choose a different directory to rerun.
+[Run instructions, outputs and validation](REPRODUCING.md).
 
 ## Implementation
 
@@ -68,5 +49,4 @@ See [provenance and changes](../PROVENANCE.md). The compact
 Study authors: **Zihao Lin and Lei Shao**. This package does not introduce a new
 blanket license for the research materials or third-party imagery/software.
 
-The relocated repository was checked locally on 17 November 2026. The GitHub
-Actions configuration is prepared for publication; no remote CI run is claimed.
+For the current local organization review, see [reproduction and validation](REPRODUCING.md#validation).

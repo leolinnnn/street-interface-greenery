@@ -3,7 +3,7 @@
 [← Code and commands](README.md)
 
 All research functions were selected from the supplied project's `scripts/`
-directory. [source-manifest.json](source-manifest.json) records source-file SHA-256
+directory. [source_manifest.json](source_manifest.json) records source-file SHA-256
 values and the original line ranges of extracted functions.
 
 | Public module | Original script | Changes |
@@ -32,9 +32,9 @@ organized as a standalone repository in the local portfolio draft. Calculation
 modules, runners and numerical data were preserved; documentation, relative
 links and a CI configuration were added or reorganized.
 
-## Repository organization
+## Local organization review — 25 November 2026
 
-On 17 November 2026, the already-shared code, numerical inputs and figures were
-organized as a standalone repository in the local portfolio draft. Calculation
-modules, runners and numerical data were preserved; documentation, relative
-links and a CI configuration were added or reorganized.
+File responsibilities and README navigation were aligned across the research
+repositories. `source_manifest.json` is the common source-record entry; its
+project-specific schema is retained. Research inputs, archived numerical
+values, original figures and engine assets preserve their bytes.
